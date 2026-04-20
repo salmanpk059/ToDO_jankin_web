@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskFlow | Smart To-Do</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="page-wrap">
+        <section class="app-card" aria-label="To-do application">
+            <header class="app-header">
+                <p class="eyebrow">Productive Daily Planner</p>
+                <h1>TaskFlow</h1>
+                <p id="date-display" class="today-text"></p>
+            </header>
+
+            <form id="todo-form" class="todo-form" autocomplete="off">
+                <label class="sr-only" for="todo-input">New task</label>
+                <div class="input-row">
+                    <input type="text" id="todo-input" placeholder="Add a meaningful task..." required maxlength="80">
+                    <button type="submit" id="add-btn" aria-label="Add task">Add</button>
+                </div>
+            </form>
+
+            <nav class="filters" aria-label="Task filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="pending">Pending</button>
+                <button class="filter-btn" data-filter="completed">Completed</button>
+            </nav>
+
+            <ul id="todo-list" class="todo-list" aria-live="polite"></ul>
+
+            <footer class="status-bar">
+                <div class="progress-track" aria-hidden="true">
+                    <div id="progress-fill" class="progress-fill"></div>
+                </div>
+                <div class="stats-row">
+                    <span id="items-left">0 tasks left</span>
+                    <button id="clear-completed" type="button">Clear Completed</button>
+                </div>
+            </footer>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
