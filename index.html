@@ -13,16 +13,40 @@
     <main class="page-wrap">
         <section class="app-card" aria-label="To-do application">
             <header class="app-header">
-                <p class="eyebrow">Productive Daily Planner</p>
-                <h1>TaskFlow the Salman Website</h1>
+                <div class="header-top">
+                    <div>
+                        <p class="eyebrow">Productive Daily Planner</p>
+                        <h1>TaskFlow Edition</h1>
+                    </div>
+                    <button id="theme-toggle" class="icon-btn" type="button" aria-label="Toggle theme">☾</button>
+                </div>
+                <p class="subtitle">This is a Salman website for planning tasks, tracking progress, and staying focused.</p>
                 <p id="date-display" class="today-text"></p>
             </header>
 
             <form id="todo-form" class="todo-form" autocomplete="off">
                 <label class="sr-only" for="todo-input">New task</label>
-                <div class="input-row">
-                    <input type="text" id="todo-input" placeholder="Add a meaningful task..." required maxlength="80">
-                    <button type="submit" id="add-btn" aria-label="Add task">Add</button>
+                <div class="input-stack">
+                    <div class="input-row">
+                        <input type="text" id="todo-input" placeholder="Add a meaningful task..." required maxlength="80">
+                        <button type="submit" id="add-btn" aria-label="Add task">Add</button>
+                    </div>
+
+                    <div class="secondary-controls">
+                        <label class="field">
+                            <span>Priority</span>
+                            <select id="todo-priority">
+                                <option value="high">High</option>
+                                <option value="medium" selected>Medium</option>
+                                <option value="low">Low</option>
+                            </select>
+                        </label>
+
+                        <label class="field">
+                            <span>Due Date</span>
+                            <input type="date" id="todo-due-date">
+                        </label>
+                    </div>
                 </div>
             </form>
 
@@ -31,6 +55,26 @@
                 <button class="filter-btn" data-filter="pending">Pending</button>
                 <button class="filter-btn" data-filter="completed">Completed</button>
             </nav>
+
+            <div class="search-row">
+                <label class="sr-only" for="search-input">Search tasks</label>
+                <input type="search" id="search-input" placeholder="Search tasks...">
+            </div>
+
+            <section class="stats-grid" aria-label="Task statistics">
+                <article class="stat-card">
+                    <span class="stat-label">Total</span>
+                    <strong id="total-count">0</strong>
+                </article>
+                <article class="stat-card">
+                    <span class="stat-label">Active</span>
+                    <strong id="active-count">0</strong>
+                </article>
+                <article class="stat-card">
+                    <span class="stat-label">Completed</span>
+                    <strong id="completed-count">0</strong>
+                </article>
+            </section>
 
             <ul id="todo-list" class="todo-list" aria-live="polite"></ul>
 
