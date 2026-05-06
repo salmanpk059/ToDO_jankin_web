@@ -112,6 +112,11 @@ body {
     font-size: 0.92rem;
 }
 
+.next-due {
+    font-size: 0.84rem;
+    color: var(--brand-strong);
+}
+
 .todo-form {
     margin-bottom: 16px;
 }
@@ -202,6 +207,16 @@ body {
     transform: translateY(1px);
 }
 
+.secondary-btn {
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 0 15px;
+    font-weight: 700;
+    background: var(--card-bg);
+    color: var(--text-soft);
+    cursor: pointer;
+}
+
 .filters {
     display: flex;
     gap: 10px;
@@ -211,7 +226,7 @@ body {
 
 .filter-btn {
     border: 1px solid var(--line);
-    background: #ffffff;
+    background: var(--card-bg);
     color: var(--text-soft);
     padding: 8px 14px;
     border-radius: 999px;
@@ -224,6 +239,35 @@ body {
     border-color: transparent;
     background: var(--chip-strong);
     color: var(--brand-strong);
+}
+
+.utility-row {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 14px;
+    flex-wrap: wrap;
+}
+
+.sort-field {
+    min-width: 170px;
+}
+
+.utility-actions {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.ghost-btn {
+    border: 1px solid var(--line);
+    background: var(--card-bg);
+    color: var(--text-soft);
+    border-radius: 11px;
+    padding: 9px 12px;
+    font-weight: 600;
+    cursor: pointer;
 }
 
 .stats-grid {
@@ -267,7 +311,7 @@ body {
     padding: 12px 14px;
     border-radius: 12px;
     border: 1px solid var(--line);
-    background: #ffffff;
+    background: var(--card-bg);
     animation: fadeSlide 0.25s ease-out;
 }
 
@@ -281,6 +325,14 @@ body {
     display: flex;
     align-items: flex-start;
     gap: 12px;
+}
+
+.todo-check {
+    margin-top: 3px;
+    width: 18px;
+    height: 18px;
+    accent-color: var(--brand);
+    cursor: pointer;
 }
 
 .todo-text {
@@ -410,6 +462,10 @@ body {
     background: #fcfdff;
 }
 
+.hidden {
+    display: none;
+}
+
 .sr-only {
     position: absolute;
     width: 1px;
@@ -479,6 +535,20 @@ body {
     .secondary-controls,
     .stats-grid {
         grid-template-columns: 1fr;
+    }
+
+    .utility-row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .utility-actions {
+        width: 100%;
+    }
+
+    .ghost-btn,
+    .secondary-btn {
+        flex: 1;
     }
 
     #add-btn {
